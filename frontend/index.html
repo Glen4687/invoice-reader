@@ -1,0 +1,64 @@
+
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Extractor AI</title>
+    <!-- Pico.css for styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+        body {
+            padding: 1rem;
+        }
+        main.container {
+            max-width: 960px;
+        }
+        #json-output dt {
+            font-weight: bold;
+            color: var(--pico-primary);
+            margin-top: 1rem;
+        }
+        #json-output dd {
+            margin-left: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--pico-secondary-background);
+        }
+        #json-output dl {
+            margin-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <hgroup>
+            <h1>Invoice Extractor AI</h1>
+            <h2>Upload a PDF to extract structured data</h2>
+        </hgroup>
+
+        <article>
+            <form id="upload-form">
+                <label for="file">
+                    PDF File
+                    <input type="file" id="file" name="file" accept=".pdf" required>
+                </label>
+                <button type="submit" id="submit-btn">Extract Data</button>
+            </form>
+        </article>
+
+        <div id="results-container" style="display: none;">
+            <h2>Extracted Data</h2>
+            <article id="json-output">
+                <!-- Data will be rendered here by script.js -->
+            </article>
+        </div>
+
+        <div id="error-container" style="display: none;">
+            <article>
+                <p id="error-message"></p>
+            </article>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
