@@ -1,6 +1,6 @@
-# Invoice Extractor AI
+# Invoice Extractor
 
-This project is a web application that uses AI to extract structured data from PDF invoices. Users can upload an invoice, and the application will parse the document to return a clean JSON object containing the invoice details.
+This project is a web application that extracts structured data from PDF invoices. Users can upload an invoice, and the application will parse the document to return a clean JSON object containing the invoice details.
 
 ## Technology Stack
 
