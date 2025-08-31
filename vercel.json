@@ -3,7 +3,8 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "pipenv": true, "requirementsPath": "requirements.txt" }
     },
     {
       "src": "frontend/package.json",
