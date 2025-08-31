@@ -47,6 +47,14 @@ def extract_text_from_pdf(pdf_file: bytes) -> str:
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Error reading PDF: {e}")
 
+def clean_data(data):
+    """Recursively remove keys with None or empty string values."""
+    if isinstance(data, dict):
+        return {k: clean_data(v) for k, v in data.items() if v is not None and v != ""}
+    if isinstance(data, list):
+        return [clean_data(v) for v in data]
+    return data
+
 async def call_ai_model(prompt: str, text: str) -> dict:
     """Calls the OpenAI API to extract structured data from text."""
     try:

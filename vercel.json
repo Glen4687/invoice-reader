@@ -6,18 +6,13 @@
       "use": "@vercel/python"
     },
     {
-      "src": "package.json", 
+      "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "public", 
-        "buildCommand": "mkdir -p public && cp -r frontend/* public/"
-      }
+      "config": { "distDir": "build" }
     }
   ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.py"
-    }
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.py" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
   ]
 }
