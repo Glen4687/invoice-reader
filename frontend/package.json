@@ -2,6 +2,8 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "vercel-build": "pip install -r ../requirements.txt",
   "dependencies": {
     "@picocss/pico": "^2.1.1",
     "@testing-library/dom": "^10.4.1",

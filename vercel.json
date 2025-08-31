@@ -4,7 +4,7 @@
     {
       "src": "api/index.py",
       "use": "@vercel/python",
-      "config": { "pipenv": true, "requirementsPath": "requirements.txt" }
+      "config": { "maxLambdaSize": "50mb", "runtime": "python3.9" }
     },
     {
       "src": "frontend/package.json",
